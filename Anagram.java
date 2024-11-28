@@ -61,23 +61,15 @@ public class Anagram {
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
-		
-		str = preProcess(str); // Assume this method is defined elsewhere
+		str = preProcess(str);
 		char[] charArray = str.toCharArray();
 	
-		// Shuffle the characters using Math.random()
 		for (int i = charArray.length - 1; i > 0; i--) {
-			int j = (int) (Math.random() * (i + 1)); // Random index from 0 to i
-			// Swap characters
+			int j = (int) (Math.random() * (i + 1));
 			char temp = charArray[i];
 			charArray[i] = charArray[j];
 			charArray[j] = temp;
 		}
-	
-		// Return the shuffled characters as a new string
-		//return new String(charArray);
-	
-
 		return new String(charArray);
 	}
 }
